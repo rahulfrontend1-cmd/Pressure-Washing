@@ -52,10 +52,16 @@ const CONTACT_INFO = [
 
 const VALUES = ["Punctual. Always.", "Detail-obsessed.", "No job too dirty.", "Results you can see."];
 
-function Stars({ n }) {
+type StarsProps = {
+  n: number;
+};
+
+function Stars({ n }: StarsProps) {
   return (
     <div className="star-row">
-      {Array.from({ length: n }).map((_, i) => <span key={i} className="star">★</span>)}
+      {Array.from({ length: n }).map((_, i) => (
+        <span key={i} className="star">★</span>
+      ))}
     </div>
   );
 }
